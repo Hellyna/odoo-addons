@@ -9,7 +9,7 @@
     'author': 'Hellyna NG',
     'application': False,
     'installable': True,
-    'license': 'MIT',
+    'license': 'Other OSI approved licence',
     'depends': [
     ],
     'data': [
