@@ -2,14 +2,16 @@
 <openerp>
   <data>
     <template id="select" name="Form Select Field">
-      <t t-foreach="select_options" t-as="o">
-        <t t-if="request.params.get(input_name, '') != o['value']">
-          <option t-att-value="o['value']"><t t-esc="o['text']"/></option>
+      <select t-att-name="input_name">
+        <t t-foreach="select_options" t-as="o">
+          <t t-if="request.params.get(input_name, '') != o['value']">
+            <option t-att-value="o['value']"><t t-esc="o['text']"/></option>
+          </t>
+          <t t-if="request.params.get(input_name, '') == o['value']">
+            <option t-att-value="o['value']" selected="1"><t t-esc="o['text']"/></option>
+          </t>
         </t>
-        <t t-if="request.params.get(input_name, '') == o['value']">
-          <option t-att-value="o['value']" selected="1"><t t-esc="o['text']"/></option>
-        </t>
-      </t>
+      </select>
     </template>
   </data>
 </openerp>
